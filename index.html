@@ -183,14 +183,32 @@
 
         .hero h1 {
             font-family: 'Open Sans', sans-serif;
-            font-size: clamp(2.2rem, 9vw, 3.5rem);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            opacity: 1;
+        }
+
+        .hero h2 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: clamp(2.5rem, 10vw, 3.8rem);
             font-weight: 800;
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent-orange) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 8px;
-            line-height: 1.1;
+            margin-bottom: 12px;
+            line-height: 1.05;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 5px;
         }
 
         .hero-description {
@@ -678,10 +696,12 @@
         <section class="hero">
             <div class="container">
                 <h1>FALTA POUCO…</h1>
-                <p class="hero-description">
-                    Descubra como preparar brigadeiros irresistíveis, daqueles que conquistam no primeiro pedaço e fazem
-                    o cliente voltar. Tudo explicado de forma clara, para você sair do zero e dar os primeiros passos
-                    com segurança.
+                <p class="hero-subtitle">DESCUBRA COMO PREPARAR</p>
+                <h2>BRIGADEIROS IRRESISTÍVEIS</h2>
+                <p class="hero-subtitle">
+                    Tudo <strong>explicado de forma clara</strong>, para que você consiga
+                    <strong>mesmo sem
+                        experiência!</strong>
                 </p>
             </div>
         </section>
@@ -873,7 +893,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>2026 - Renda Doce</p>
+        <p>© 2026 Renda Doce. Todos os direitos reservados.</p>
     </footer>
 
     <script>
@@ -882,7 +902,8 @@
         const iframe = document.getElementById('heroVideo');
         const vacancyNumber = document.getElementById('vacancyNumber');
 
-        let currentVacancy = 34;
+        let currentVacancy = Math.floor(Math.random() * (50 - 20 + 1)) + 20;
+        vacancyNumber.textContent = currentVacancy;
 
         // YouTube Player API
         let player;
